@@ -82,8 +82,10 @@ spec:
         tier: frontend
     spec:
       containers:
-        - name: yelb-ui
-          image: mreferre/yelb-ui:0.7
+        # - name: yelb-ui
+        #   image: mreferre/yelb-ui:0.7
+        - image: 874542566772.dkr.ecr.us-east-1.amazonaws.com/nodejs-sample:latest
+          name: nodejs-sample        
           ports:
             - containerPort: 80
 ---
