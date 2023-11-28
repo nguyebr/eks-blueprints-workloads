@@ -82,10 +82,9 @@ spec:
         tier: frontend
     spec:
       containers:
-        # - name: yelb-ui
+        - name: yelb-ui
         #   image: mreferre/yelb-ui:0.7
-        - image: 874542566772.dkr.ecr.us-east-1.amazonaws.com/nodejs-sample:latest
-          name: nodejs-sample        
+        - image: 874542566772.dkr.ecr.us-east-1.amazonaws.com/yelb-ui:latest
           ports:
             - containerPort: 80
 ---
@@ -131,7 +130,8 @@ spec:
     spec:
       containers:
         - name: yelb-db
-          image: mreferre/yelb-db:0.5
+          # image: mreferre/yelb-db:0.5
+          image: 874542566772.dkr.ecr.us-east-1.amazonaws.com/yelb-db:latest
           ports:
             - containerPort: 5432
 ---
@@ -154,7 +154,8 @@ spec:
     spec:
       containers:
         - name: yelb-appserver
-          image: mreferre/yelb-appserver:0.5
+          # image: mreferre/yelb-appserver:0.5
+          image: 874542566772.dkr.ecr.us-east-1.amazonaws.com/yelb-appserver:latest
           ports:
             - containerPort: 4567
 ---
