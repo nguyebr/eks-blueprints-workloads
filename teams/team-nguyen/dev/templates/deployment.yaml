@@ -1,42 +1,10 @@
-apiVersion: v1
-kind: Service
-metadata:
-  namespace: team-nguyen
-  name: nodejs-sample
-  labels:
-    app: nodejs-sample
-    tier: frontend
-spec:
-  type: LoadBalancer
-  ports:
-    - port: 80
-      protocol: TCP
-      targetPort: 80
-  selector:
-    app: nodejs-sample
-    tier: frontend
-
-# apiVersion: v1
-# kind: Service
-# metadata:
-#   name: nodejs-sample
-#   labels:
-#     app: nodejs-sample
-#     {{- toYaml .Values.labels | nindent 4 }}
-# spec:
-#   ports:
-#   - port: 80
-#     targetPort: 80
-#   selector:
-#     app: nodejs-sample
-
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nodejs-sample
   labels:
     app: nodejs-sample
+    {{- toYaml .Values.labels | nindent 4 }}
 spec:
   replicas: 1
   revisionHistoryLimit: 3
@@ -49,7 +17,7 @@ spec:
         app: nodejs-sample
     spec:
       containers:
-      - image: 874542566772.dkr.ecr.us-east-1.amazonaws.com/nodejs-sample:1.0.0
+      - image: 874542566772.dkr.ecr.us-east-1.amazonaws.com/nodejs-sample:latest
         name: nodejs-sample
         ports:
           - containerPort: 80
