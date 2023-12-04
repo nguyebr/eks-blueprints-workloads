@@ -9,6 +9,7 @@ spec:
   type: LoadBalancer
   ports:
     - port: 80
-      targetPort: 1337
+      protocol: TCP
+      targetPort: 80
   selector:
     app: nodejs
