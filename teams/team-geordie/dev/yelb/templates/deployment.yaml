@@ -84,8 +84,7 @@ spec:
       containers:
         - name: yelb-ui
           # image: mreferre/yelb-ui:0.7
-        # - image: 874542566772.dkr.ecr.us-east-1.amazonaws.com/yelb-ui:1.0.0
-        - image: 874542566772.dkr.ecr.us-east-1.amazonaws.com/mreferre/yelb-ui:0.7
+          image: 874542566772.dkr.ecr.us-east-1.amazonaws.com/yelb-ui:1.0.0
           ports:
             - containerPort: 80
 ---

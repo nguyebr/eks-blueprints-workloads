@@ -18,8 +18,8 @@ spec:
     #   nodeSelector:
     #     "beta.kubernetes.io/os": linux
       containers:
-          - image: 874542566772.dkr.ecr.us-east-1.amazonaws.com/nodejs-sample:1.0.0
-            name: nodejs
-            ports:
-            - name: http
-              containerPort: 80
+        - name: nodejs
+          # image: mreferre/yelb-ui:0.7
+          image: 874542566772.dkr.ecr.us-east-1.amazonaws.com/nodejs-sample:1.0.0
+          ports:
+            - containerPort: 80
